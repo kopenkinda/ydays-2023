@@ -1,2 +1,16 @@
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-[#181818];
+  @apply text-[#f5f5f5];
+  @appy w-full;
+  @apply min-h-screen;
+  @apply flex;
+  @apply flex-col;
+}
+
+#__next {
+  @apply min-h-screen;
+}
