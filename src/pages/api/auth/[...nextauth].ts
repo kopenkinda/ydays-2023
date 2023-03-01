@@ -1,29 +1,39 @@
 import NextAuth, { type NextAuthOptions } from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
-// Prisma adapter for NextAuth, optional and can be removed
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-
-import { env } from "../../../env/server.mjs";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { prisma } from "../../../server/db/client";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import {loginSchema} from "../../../server/trpc/router/auth";
+
 
 export const authOptions: NextAuthOptions = {
-  // Include user.id on session
-  callbacks: {
-    session({ session, user }) {
-      if (session.user) {
-        session.user.id = user.id;
-      }
-      return session;
+    session: {
+        strategy: 'jwt',
+        maxAge: 30 * 24 * 60 * 60,
+        updateAge: 24 * 60 * 60,
     },
-  },
-  // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+    CredentialsProvider({
+      name: "email",
+      credentials: {
+        email: {label: 'email', type: 'email', placeholder: 'example@email.com'},
+        password: {label: "Password", type: "password"},
+      },
+      async authorize(credential, req){
+          const creds = await loginSchema.parseAsync(credential);
+          const user = await prisma.user.findFirst({
+            where: {email: creds.email}
+          });
+          if(!user){
+            return null;
+          }
+          return {
+            id: user.id,
+            email: user.email,
+            username: user.name,
+          };
+      },
     }),
-    // ...add more providers here
   ],
 };
 

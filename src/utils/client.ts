@@ -1,0 +1,2 @@
+import createClient from "bridge-sdk/src/lib";
+export const bridgeClient = createClient("e9552ffdd3bd4b22833d74a0307a1d02", "QYaRMXahbCMuNDu4QWlJ46G2qd0G2AuHgSdocz2csjuIhd26FEKemssPnUjcbC5e", "2021-06-01")
