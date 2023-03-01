@@ -1,0 +1,17 @@
+import { type AppType } from "next/app";
+import { ClerkProvider } from "@clerk/nextjs";
+import { trpc } from "../utils/trpc";
+import "../styles/globals.css";
+import Layout from "../components/common/Layout";
+
+const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
+  return (
+    <ClerkProvider {...pageProps}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ClerkProvider>
+  );
+};
+
+export default trpc.withTRPC(MyApp);
