@@ -1,10 +1,12 @@
-import { type AppType } from "next/app";
 import { ClerkProvider } from "@clerk/nextjs";
-import { trpc } from "../utils/trpc";
-import "../styles/globals.css";
 import Layout from "../components/common/Layout";
+import "../styles/globals.css";
+import { trpc } from "../utils/trpc";
 
-const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
+const DefaultLayout = Layout;
+
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const Layout = Component.Layout || DefaultLayout;
   return (
     <ClerkProvider {...pageProps}>
       <Layout>
