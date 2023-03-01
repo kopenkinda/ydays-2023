@@ -39,7 +39,7 @@
   "name": "@acme/nextjs",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "pnpm with-env next build",
     "clean": "rm -rf .next .turbo node_modules",
     "dev": "pnpm with-env next dev",
     "lint": "next lint",
