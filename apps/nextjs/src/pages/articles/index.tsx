@@ -1,5 +1,4 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import { sanity } from "../../studio/sanity.client";
 
 const ArticlePage: NextPage = ({
   articles,
@@ -8,7 +7,7 @@ const ArticlePage: NextPage = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articles = (await sanity.fetch('*[_type == "article"]')) as any[];
+  const articles = [] as never[];
   return {
     props: {
       articles,
