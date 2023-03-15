@@ -1,12 +1,12 @@
 import type { PropsWithChildren } from 'react';
 import Header from './Header';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 
 export default function Layout({ children }: PropsWithChildren<unknown>) {
   return (
     <>
       <Header />
-      {children}
+      <main>{children}</main>
       <Navbar />
     </>
   );

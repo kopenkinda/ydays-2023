@@ -3,12 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#181818];
-  @apply text-[#f5f5f5];
-  @appy w-full;
-  @apply min-h-screen;
-  @apply flex;
-  @apply flex-col;
+  @apply mx-auto flex min-h-screen w-full max-w-sm flex-col bg-[#181818] text-[#f5f5f5];
 }
 
 #__next {
