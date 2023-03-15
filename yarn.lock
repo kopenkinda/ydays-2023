@@ -1237,10 +1237,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@lombard/bridge-sdk@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@lombard/bridge-sdk/-/bridge-sdk-1.0.3.tgz#c0096ad12c44bfacef9c996244b4561044077224"
-  integrity sha512-M0AYxDLj0bJLQyVvQj6aqWPGxaw6LXRahYqN/li4+IqMMpjkaNykJ6amTCxZclyn4A8oFiBN22kfhma/bCn6wA==
+"@lombard/bridge-sdk@1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@lombard/bridge-sdk/-/bridge-sdk-1.0.6.tgz#7d6d50e2bc299199f6b173ec786db747737e6bf3"
+  integrity sha512-QyiiAb+FvXCK9J0aEo7bZyYtyflchhCUNvkBXaYXCht4QBoPVveWccyL+uRrORDYx1bhrFL4oC3+FfBo1vAGGA==
   dependencies:
     dotenv "^16.0.3"
     isomorphic-fetch "^3.0.0"
