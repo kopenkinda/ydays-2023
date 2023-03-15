@@ -19,4 +19,8 @@ const config = {
     defaultLocale: 'en',
   },
 };
-export default withPWA(config);
+
+const _config =
+  process.env.NODE_ENV === 'production' ? withPWA(config) : config;
+
+export default _config;
