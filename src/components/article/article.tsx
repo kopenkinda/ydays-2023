@@ -1,5 +1,5 @@
 import { IconClockHour2 } from '@tabler/icons-react';
-import readingTime from 'reading-time';
+// import readingTime from 'reading-time';
 
 import type { Article as TArticle } from '../../pages/articles';
 

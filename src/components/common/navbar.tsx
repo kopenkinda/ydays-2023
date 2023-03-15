@@ -23,7 +23,7 @@ export default function Navbar() {
       />
       <IconBook
         size={28}
-        color={router.asPath === '/posts' ? 'yellow' : 'white'}
+        color={router.asPath === '/articles' ? 'yellow' : 'white'}
       />
       <IconFileAnalytics
         size={28}
