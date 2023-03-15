@@ -9,7 +9,7 @@ export default class Document extends NextDocument {
           <link rel='apple-touch-icon' href='/icon.png'></link>
           <meta name='theme-color' content='#fff' />
         </Head>
-        <body>
+        <body className='min-h-screen'>
           <Main />
           <NextScript />
         </body>

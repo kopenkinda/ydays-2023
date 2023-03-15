@@ -1,38 +1,38 @@
-import {Box, Grid, IconButton} from "@chakra-ui/react";
-import {IconBuildingBank, IconChartPie, IconList, IconSchool} from "@tabler/icons";
+import {
+  IconList,
+  IconHome,
+  IconFileAnalytics,
+  IconBook,
+  IconUser,
+} from '@tabler/icons-react';
 
-export default function Navbar(){
-    return (
-    <Box
-        className='sticky bottom-0 flex border-b border-gray-200 w-full'>
-        <div className='w-full'>
-            <Grid templateColumns='repeat(4, 1fr)'>
-                <IconButton
-                    colorScheme='blue'
-                    size={'lg'}
-                    aria-label='Search database'
-                    icon={<IconChartPie />}
-                />
-                <IconButton
-                    colorScheme='blue'
-                    size={'lg'}
-                    aria-label='Search database'
-                    icon={<IconBuildingBank />}
-                />
-                <IconButton
-                    colorScheme='blue'
-                    size={'lg'}
-                    aria-label='Search database'
-                    icon={<IconSchool />}
-                />
-                <IconButton
-                    colorScheme='blue'
-                    size={'lg'}
-                    aria-label='Search database'
-                    icon={<IconList />}
-                />
-            </Grid>
-        </div>
-    </Box>
-    )
+import { useRouter } from 'next/router';
+
+export default function Navbar() {
+  const router = useRouter();
+
+  return (
+    <div className='fixed bottom-6 left-4 right-4  flex flex-row items-center justify-evenly rounded-full border-[1.5px] border-gray-400 bg-gray-600/30 py-5 backdrop-blur-sm'>
+      <IconHome
+        size={28}
+        color={router.asPath === '/home' ? 'yellow' : 'white'}
+      />
+      <IconList
+        size={28}
+        color={router.asPath === '/leaderboard' ? 'yellow' : 'white'}
+      />
+      <IconBook
+        size={28}
+        color={router.asPath === '/articles' ? 'yellow' : 'white'}
+      />
+      <IconFileAnalytics
+        size={28}
+        color={router.asPath === '/analytics' ? 'yellow' : 'white'}
+      />
+      <IconUser
+        size={28}
+        color={router.asPath === '/home' ? 'yellow' : 'white'}
+      />
+    </div>
+  );
 }
