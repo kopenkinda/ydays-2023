@@ -15,9 +15,13 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <ChakraProvider>
+{/*
         <Layout>
+*/}
           <Component {...pageProps} />
+{/*
         </Layout>
+*/}
       </ChakraProvider>
     </SessionProvider>
   );
