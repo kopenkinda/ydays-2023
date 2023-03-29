@@ -1,4 +1,4 @@
-import React, {SyntheticEvent} from "react";
+    import React, {SyntheticEvent} from "react";
 import {signIn} from "next-auth/react";
 import {useRouter} from "next/router";
 
@@ -15,13 +15,13 @@ export default function AuthStep() {
             redirect: false,
             type: "login"
         })
-        router.push('/test')
+        router.push('/secret')
     }
 
     return (
         <form onSubmit={handleLogin}>
             {loginError}
-            <div className="mx-auto max-w-lg ">
+            <div className="mx-auto max-w-lg mt-20">
                 <div className="py-1">
                     <div className="py-1">
                         <span className="px-1 text-sm text-gray-600">Username</span>

@@ -8,18 +8,16 @@ import SecretStep from "../components/auth/SecretStep";
 const ProtectedPage: NextPage = () => {
 
     const {status, data} = useSession();
-
     useEffect(() => {
         if(status === "unauthenticated") {
             Router.replace('/');
         }
     }, [status])
-
     if (status === 'authenticated')
     {
         console.log(data);
         return (
-            <div>
+            <div className={'mt-20'}>
                 <SecretStep user={data}/>
             </div>
         )

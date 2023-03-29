@@ -13,8 +13,8 @@ export default function Header() {
   }
 
   return (
-    <div className='fixed top-0 left-0 right-0 z-50 h-10 bg-[#181818]'>
-      <div className='mt-4 ml-6 flex flex-row'>
+    <div className='fixed top-0 left-0 right-0 z-50 h-17 bg-[#181818]'>
+      <div className='mt-4 mb-4 ml-6 flex flex-row'>
         <svg
           width='24'
           height='18'
