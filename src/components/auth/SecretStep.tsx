@@ -1,8 +1,8 @@
 import {SyntheticEvent, useState} from "react";
 import {trpc} from "../../utils/trpc";
-import {router} from "next/client";
+import {useRouter} from "next/router";
 export default function SecretStep(user: any) {
-
+    const router = useRouter();
     const [secret, setSecret] = useState('');
     const RegisterBridgeMutation = trpc.auth.RegisterBridgeUser.useMutation();
     const handleSecret = async (event: SyntheticEvent<HTMLFormElement>) => {
@@ -11,7 +11,7 @@ export default function SecretStep(user: any) {
             email: user.user.user.email,
             code: secret,
         }).then((res) => {
-            router.push('/home')
+            router.replace('/home')
         })
     }
 
